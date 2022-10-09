@@ -16,7 +16,7 @@ class Circuit3:
                 self.qc.rz(self.thetaList[2*l+1 + self.qubits*q*2], q)
             ent = self.qubits-1
             while ent > 0:
-                self.qc.crx(next(self.rcxList), ent, ent-1)
+                self.qc.crz(next(self.rcxList), ent, ent-1)
                 ent = ent -1
     def draw(self):
         print(self.qc)
