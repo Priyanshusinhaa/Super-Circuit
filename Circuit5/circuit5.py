@@ -20,7 +20,7 @@ class Circuit5:
 
             for i in range(4):
                 ent = self.qubits-1
-                if i == 0 or i ==3:
+                if i == 0 :
                     while ent > 0:
                         self.qc.crx(next(self.crxList), ent, ent-1)
                         ent = ent -1  
@@ -41,6 +41,12 @@ class Circuit5:
                             self.qc.crx(next(self.crxList), ent, ent-1)
                         ent = ent -1  
                     self.qc.barrier()
+                if i == 3:
+                    while ent > 0:
+                        self.qc.crx(next(self.crxList), 0, ent)
+                        ent = ent -1  
+                    self.qc.barrier()
+
             
     def draw(self):
         print(self.qc)
