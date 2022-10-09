@@ -15,9 +15,11 @@ class Circuit4:
                 self.qc.rx(self.thetaList[2*l + self.qubits*q*2], q)
                 self.qc.rz(self.thetaList[2*l+1 + self.qubits*q*2], q)
             ent = self.qubits-1
+            self.qc.barrier()
             while ent > 0:
                 self.qc.crx(next(self.rcxList), ent, ent-1)
                 ent = ent -1
+            self.qc.barrier()
     def draw(self):
         print(self.qc)
     
@@ -36,7 +38,7 @@ class Circuit4:
         return counts
 
 def main():
-    Circuit4(6,3, theta, rcxList).draw()
+    Circuit4(7,3, theta, rcxList).draw()
     pass
 
 if __name__ == '__main__':

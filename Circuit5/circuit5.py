@@ -16,20 +16,36 @@ class Circuit5:
                 self.qc.rx(self.thetaList[2*l + self.qubits*q*2], q)
                 self.qc.rz(self.thetaList[2*l+1 + self.qubits*q*2], q)
             ent = self.qubits-1
+            self.qc.barrier()
+
             for i in range(4):
                 ent = self.qubits-1
                 if i == 0 or i ==3:
                     while ent > 0:
                         self.qc.crx(next(self.crxList), ent, ent-1)
                         ent = ent -1  
-                # if i == 1 or i ==2:
-                #     while ent > 0:
-                #         self.qc.crx(next(self.rcxList), ent, ent-1)
-                #         ent = ent -1  
+                    self.qc.barrier()
+                if i == 1:
+                    while ent > 0:
+                        if ent != self.qubits-1:
+                            self.qc.crx(next(self.crxList), ent, ent-1)
+                        else:
+                            self.qc.crx(next(self.crxList), ent-1, ent)
+                        ent = ent -1  
+                    self.qc.barrier()
+                if i == 2:
+                    while ent > 0:
+                        if ent != 1:
+                            self.qc.crx(next(self.crxList), ent-1, ent)
+                        else:
+                            self.qc.crx(next(self.crxList), ent, ent-1)
+                        ent = ent -1  
+                    self.qc.barrier()
+            
     def draw(self):
         print(self.qc)
 
 
-Circuit5(4,4, theta, theta).draw()
+Circuit5(6,1, theta, theta).draw()
 
 
