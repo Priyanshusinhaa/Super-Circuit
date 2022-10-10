@@ -15,7 +15,6 @@ class Circuit5:
             for q in range(self.qubits):
                 self.qc.rx(self.thetaList[2*l + self.qubits*q*2], q)
                 self.qc.rz(self.thetaList[2*l+1 + self.qubits*q*2], q)
-            ent = self.qubits-1
             self.qc.barrier()
 
             for i in range(4):
