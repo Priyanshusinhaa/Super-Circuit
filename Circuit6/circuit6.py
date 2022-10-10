@@ -5,10 +5,10 @@ theta = [i for i in range(100)]
 rcxList = [i for i in range(80)]
 
 class Circuit5:
-    def __init__(self, qubits, thetaList, crxList) -> None:
+    def __init__(self, qubits, thetaList, crzList) -> None:
         self.qubits = qubits
         self.thetaList = thetaList
-        self.crxList = iter(crxList)
+        self.crzList = iter(crzList)
         self.qc = QuantumCircuit(qubits)
         self.qc2 = QuantumCircuit(qubits)
         a = 0
@@ -24,28 +24,28 @@ class Circuit5:
             ent = self.qubits-1
             if i == 0 :
                 while ent > 0:
-                    self.qc.crx(next(self.crxList), ent, ent-1)
+                    self.qc.crz(next(self.crzList), ent, ent-1)
                     ent = ent -1  
                 self.qc.barrier()
             if i == 1:
                 while ent > 0:
                     if ent != self.qubits-1:
-                        self.qc.crx(next(self.crxList), ent, ent-1)
+                        self.qc.crz(next(self.crzList), ent, ent-1)
                     else:
-                        self.qc.crx(next(self.crxList), ent-1, ent)
+                        self.qc.crz(next(self.crzList), ent-1, ent)
                     ent = ent -1  
                 self.qc.barrier()
             if i == 2:
                 while ent > 0:
                     if ent != 1:
-                        self.qc.crx(next(self.crxList), ent-1, ent)
+                        self.qc.crz(next(self.crzList), ent-1, ent)
                     else:
-                        self.qc.crx(next(self.crxList), ent, ent-1)
+                        self.qc.crz(next(self.crzList), ent, ent-1)
                     ent = ent -1  
                 self.qc.barrier()
             if i == 3:
                 while ent > 0:
-                    self.qc.crx(next(self.crxList), 0, ent)
+                    self.qc.crz(next(self.crzList), 0, ent)
                     ent = ent -1  
                 self.qc.barrier()
         self.qc3 = self.qc + self.qc2
