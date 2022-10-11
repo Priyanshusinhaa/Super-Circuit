@@ -81,7 +81,7 @@ class Ansatz1:
                     j += 1
                 if i != self.layer:
                     while ent < self.qubits:
-                        qc.cx(ent, ent+1)
+                        qc.swap(ent, ent+1)
                         ent += 2
             else: 
                 j = 0
@@ -99,7 +99,7 @@ class Ansatz1:
                     j += 1
                 qc.i(0)
                 while ent < self.qubits -1:
-                    qc.cx(ent, ent+1)
+                    qc.swap(ent, ent+1)
                     ent += 2
                 qc.i(self.qubits-1)
         print(qc)
