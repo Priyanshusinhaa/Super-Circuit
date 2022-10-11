@@ -1,14 +1,14 @@
 from qiskit import *
 
 theta = [i for i in range(100)]
-rcxList = [i for i in range(80)]
+crxList = [i for i in range(80)]
 
 class Circuit4:
-    def __init__(self, qubits, layers, thetaList, rcxList) -> None:
+    def __init__(self, qubits, layers, thetaList, crxList) -> None:
         self.qubits = qubits
         self.layers = layers
         self.thetaList = thetaList
-        self.rcxList = iter(rcxList)
+        self.crxList = iter(crxList)
         self.qc = QuantumCircuit(self.qubits)
         for l in range(self.layers):
             for q in range(self.qubits):
@@ -17,7 +17,7 @@ class Circuit4:
             ent = self.qubits-1
             self.qc.barrier()
             while ent > 0:
-                self.qc.crx(next(self.rcxList), ent, ent-1)
+                self.qc.crx(next(self.crxList), ent, ent-1)
                 ent = ent -1
             self.qc.barrier()
     def draw(self):
@@ -38,7 +38,7 @@ class Circuit4:
         return counts
 
 def main():
-    Circuit4(7,3, theta, rcxList).draw()
+    Circuit4(7,3, theta, crxList).draw()
     pass
 
 if __name__ == '__main__':
