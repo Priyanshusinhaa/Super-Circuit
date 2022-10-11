@@ -52,6 +52,20 @@ class Circuit5:
 
     def draw(self):
         print(self.qc3)
+    
+    def statevector(self):
+        simu_sv = BasicAer.get_backend('statevector_simulator')
+        sv = execute(self.qc, simu_sv).result().get_statevector()
+        if type == 'print':
+            print(sv)
+        return sv
+    
+    def counts(self, type = None):
+        simu_sv = BasicAer.get_backend('statevector_simulator')
+        counts = execute(self.qc, simu_sv).result().get_counts()
+        if type == 'print':
+            print(counts)
+        return counts
 
 Circuit5(9, theta, theta).draw()
 
