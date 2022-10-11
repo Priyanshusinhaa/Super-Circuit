@@ -3,15 +3,13 @@ from qiskit import *
 
 theta = [i for i in range(32)]
 
-
 class Circuit7:
-
     def __init__(self, qubits, layer, thetaList) -> None:
         self.qubits = qubits
         self.layer = layer -1
         self.theta = thetaList
         
-        nbgates_0_last = self.countOdd(self.layer + 1)*2
+        nbgates_0_last = self.__countOdd(self.layer + 1)*2
         nbtheta = (nbgates_0_last*2) + (self.qubits-2)*((self.layer+1)*2)
         
         if (len(self.theta) > nbtheta):
@@ -34,26 +32,10 @@ class Circuit7:
         else:
             print("Please Check You're Entering Right DataType in place of 'Qubits' parameter")
             raise
-    def countOdd(self, num):
-        count = 0
-        for i in range(0, num + 1):
-            if i%2 == 1:
-                count += 1
-            else:
-                pass
-        return count
 
-    def addAllAtIndex(self, mylist, index):
-        a = mylist
-        num = 0
-        for i in range(0, index):
-            num += a[i]
-        return num
-    
-    def draw(self):
-        qc = QuantumCircuit(self.qubits)
+        self.qc = QuantumCircuit(self.qubits)
         
-        nbgates_0_last = self.countOdd(self.layer + 1)*2
+        nbgates_0_last = self.__countOdd(self.layer + 1)*2
         nbgates_all = (self.layer+1)*2
         
         nbgates_at_each_layer = []
@@ -69,38 +51,69 @@ class Circuit7:
                 ent = 0
                 while j < self.qubits:
                     if j == 0:
-                        qc.ry(self.theta[i], j)
-                        qc.rz(self.theta[i+1], j)
+                        self.qc.ry(self.theta[i], j)
+                        self.qc.rz(self.theta[i+1], j)
                     elif j == self.qubits - 1:
-                        qc.ry(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i], j)
-                        qc.rz(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i + 1], j)
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i + 1], j)
                     else: 
-                        qc.ry(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
-                        qc.rz(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i *2+ 1], j)   
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i *2+ 1], j)   
                     j += 1
                 if i != self.layer:
                     while ent < self.qubits:
-                        qc.cx(ent, ent+1)
+                        self.qc.cx(ent, ent+1)
                         ent += 2
             else: 
                 j = 0
                 ent = 1
                 while j < self.qubits:
                     if j == 0:
-                        qc.i(j)
-                        qc.i(j)            
+                        self.qc.i(j)
+                        self.qc.i(j)            
                     elif j == self.qubits-1:
-                        qc.i(j)
-                        qc.i(j)            
+                        self.qc.i(j)
+                        self.qc.i(j)            
                     else:
-                        qc.ry(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
-                        qc.rz(self.theta[self.addAllAtIndex(nbgates_at_each_layer, j) + i*2 + 1], j)
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2 + 1], j)
                     j += 1
-                qc.i(0)
+                self.qc.i(0)
                 while ent < self.qubits -1:
-                    qc.cx(ent, ent+1)
+                    self.qc.cx(ent, ent+1)
                     ent += 2
-                qc.i(self.qubits-1)
-        print(qc)
+                self.qc.i(self.qubits-1)
+    def __countOdd(self, num):
+        count = 0
+        for i in range(0, num + 1):
+            if i%2 == 1:
+                count += 1
+            else:
+                pass
+        return count
+
+    def __addAllAtIndex(self, mylist, index):
+        a = mylist
+        num = 0
+        for i in range(0, index):
+            num += a[i]
+        return num
+    
+    def draw(self):
+        print(self.qc)
+
+    def statevector(self):
+        simu_sv = BasicAer.get_backend('statevector_simulator')
+        sv = execute(self.qc, simu_sv).result().get_statevector()
+        if type == 'print':
+            print(sv)
+        return sv
+    
+    def counts(self, type = None):
+        simu_sv = BasicAer.get_backend('statevector_simulator')
+        counts = execute(self.qc, simu_sv).result().get_counts()
+        if type == 'print':
+            print(counts)
+        return counts
         
 Circuit7(4, 5, theta).draw()

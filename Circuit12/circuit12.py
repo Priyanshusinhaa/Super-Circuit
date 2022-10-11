@@ -1,23 +1,25 @@
 import qiskit
 from qiskit import *
 
-theta = [i for i in range(32)]
+theta = [i for i in range(100)]
+crzList = theta
 
-class Circuit8:
-    def __init__(self, qubits, layer, thetaList) -> None:
+class Circuit12:
+    def __init__(self, qubits, layer, thetaList, crzList) -> None:
         self.qubits = qubits
         self.layer = layer -1
         self.theta = thetaList
+        self.crzList = iter(crzList)
         
         nbgates_0_last = self.__countOdd(self.layer + 1)*2
         nbtheta = (nbgates_0_last*2) + (self.qubits-2)*((self.layer+1)*2)
         
         if (len(self.theta) > nbtheta):
-            print('Given theta list is Greater than Required gates')
+            print('Given theta list is greater than required gates')
         elif (len(self.theta) == nbtheta):
             pass
         else:
-            print("Number of Elements in theta list provided isn't equal to Gates required in Ansatz. Please check thetaList")
+            print("Number of elements in theta list provided isn't equal to gates required in Ansatz. Please check thetaList")
             raise
         
         if (self.qubits < 4) or (self.qubits%2 != 0):
@@ -30,7 +32,7 @@ class Circuit8:
         if type(self.qubits) != type(int):
             self.qubits = int(self.qubits)
         else:
-            print("Please Check You're Entering Right DataType in place of 'Qubits' parameter")
+            print("Please check You're entering right dataType in place of 'Qubits' parameter")
             raise
 
         self.qc = QuantumCircuit(self.qubits)
@@ -40,47 +42,30 @@ class Circuit8:
         
         nbgates_at_each_layer = []
         for i in range(0, self.qubits):
-            if i == 0 or i == self.qubits - 1:
-                nbgates_at_each_layer.append(nbgates_0_last)
-            else:
-                nbgates_at_each_layer.append(nbgates_all)
+            nbgates_at_each_layer.append(nbgates_all)
         
         for i in range(0, self.layer + 1):
             if i%2 == 0: # apply first layer with entanglement
                 j = 0
                 ent = 0
                 while j < self.qubits:
-                    if j == 0:
-                        self.qc.ry(self.theta[i], j)
-                        self.qc.rz(self.theta[i+1], j)
-                    elif j == self.qubits - 1:
-                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i], j)
-                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i + 1], j)
-                    else: 
-                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
-                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i *2+ 1], j)   
+                    self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                    self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i *2+ 1], j)   
                     j += 1
                 if i != self.layer:
                     while ent < self.qubits:
-                        self.qc.swap(ent, ent+1)
+                        self.qc.crz(next(self.crzList), ent+1, ent)
                         ent += 2
             else: 
                 j = 0
                 ent = 1
                 while j < self.qubits:
-                    if j == 0:
-                        self.qc.i(j)
-                        self.qc.i(j)            
-                    elif j == self.qubits-1:
-                        self.qc.i(j)
-                        self.qc.i(j)            
-                    else:
-                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
-                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2 + 1], j)
+                    self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                    self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2 + 1], j)
                     j += 1
                 self.qc.i(0)
                 while ent < self.qubits -1:
-                    self.qc.swap(ent, ent+1)
+                    self.qc.crz(next(self.crzList), ent+1, ent)
                     ent += 2
                 self.qc.i(self.qubits-1)
     def __countOdd(self, num):
@@ -116,4 +101,4 @@ class Circuit8:
             print(counts)
         return counts
         
-Circuit8(4, 5, theta).draw()
+Circuit12(4, 5, theta, crzList).draw()
