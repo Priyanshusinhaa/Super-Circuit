@@ -4,7 +4,7 @@ from qiskit import *
 theta = [i for i in range(32)]
 
 
-class Ansatz1:
+class Circuit8:
 
     def __init__(self, qubits, layer, thetaList) -> None:
         self.qubits = qubits
@@ -104,4 +104,4 @@ class Ansatz1:
                 qc.i(self.qubits-1)
         print(qc)
         
-Ansatz1(4, 5, theta).draw()
+Circuit8(4, 5, theta).draw()
