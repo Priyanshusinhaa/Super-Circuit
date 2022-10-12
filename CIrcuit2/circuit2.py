@@ -3,7 +3,7 @@ import qiskit
 
 theta = [i for i in range(50)]
 
-class circuit2:
+class Circuit2:
     def __init__(self, qubits, layers, thetaList) -> None:
         self.qubits = qubits
         self.layers = layers
@@ -36,4 +36,4 @@ class circuit2:
         return counts
 
 
-circuit2(4, 6, theta).draw()
+# Circuit2(4, 6, theta).draw()

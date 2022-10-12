@@ -32,6 +32,6 @@ class Circuit1:
         return counts
 
 
-Circuit1(4, 4, theta).statevector(type = 'print')
+Circuit1(4, 4, theta).draw()
 
                 
