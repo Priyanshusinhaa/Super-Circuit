@@ -1,6 +1,7 @@
 from qiskit import *
 import qiskit
 
+
 theta = [i for i in range(50)]
 class Circuit1:
     def __init__(self, qubits, layers, thetaList, measure = False) -> None:
@@ -16,6 +17,9 @@ class Circuit1:
             self.qc.measure_all()
     def draw(self):
         print(self.qc)
+    
+    def getCircuit(self):
+        return self.qc
         
     def statevector(self, type = None):
         simu_sv = BasicAer.get_backend('statevector_simulator')
@@ -31,7 +35,11 @@ class Circuit1:
             print(counts)
         return counts
 
+def main():
+    Circuit1(4, 4, theta).draw()
+    pass
 
-Circuit1(4, 4, theta).draw()
+if __name__ == '__main__':
+    main()
 
                 

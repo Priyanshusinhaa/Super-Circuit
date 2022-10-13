@@ -19,7 +19,8 @@ class Circuit2:
                 ent = ent -1
 
     def draw(self):
-        print(self.qc)
+        # print(self.qc)
+        self.qc.draw('mpl')
     
     def statevector(self):
         simu_sv = BasicAer.get_backend('statevector_simulator')
@@ -36,4 +37,4 @@ class Circuit2:
         return counts
 
 
-# Circuit2(4, 6, theta).draw()
+# Circuit2(6, 6, theta).draw()

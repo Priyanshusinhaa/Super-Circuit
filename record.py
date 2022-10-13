@@ -3,11 +3,15 @@ from os import system
 from time import sleep
 from Circuit2.circuit2 import Circuit2
 
-theta = [i for i in range(290)]
+
+theta = [i for i in range(590)]
 for i in range(90):
     a = randint(2,5)
     b = randint(2,6)
-    Circuit2(b, a, theta).draw()
+    circuit2 = Circuit2(b, a, theta)
+    circuit2.draw()
+    print() 
+
     print()
     print(f'Circuit2({b}, {a}, thetaList).draw()')
     sleep(3) 
