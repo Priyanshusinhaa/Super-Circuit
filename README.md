@@ -14,6 +14,7 @@ for example,
 
 
 if project requirement is for 128 qubits you just need to pass like,
+                
                 for draw in terminal,
                     > circuit7(128, 1, thetaList).draw()
 
