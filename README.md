@@ -5,16 +5,19 @@
 You could use Super Circuit in serveral Quantum Algorithm including QML, VQE, QAOA and etc. 
 I'll add encoder and label extracter also later.
 
-
+'''
 for example, 
+
             Circuit7(qubit, layer, thetaList).draw()
             where,
                 Qubit = number of qubit
                 Layer = number of repetition of circuit along x-axis
                 thetaList = List of theta for tunable gates
 
+'''
 
 if project requirement is for 128 qubits you just need to pass like,
+
                 for "draw" in terminal,
                     > circuit7(128, 1, thetaList).draw()
 
