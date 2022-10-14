@@ -2,6 +2,7 @@ import qiskit
 from qiskit import *
 
 theta = [i for i in range(100)]
+crxList = theta
 
 class Circuit11:
     def __init__(self, qubits, layer, thetaList, crxList) -> None:
@@ -99,5 +100,10 @@ class Circuit11:
         if type == 'print':
             print(counts)
         return counts
-        
-Circuit11(4, 5, theta, theta).draw()
+
+def main():
+    Circuit11(4, 5, theta, crxList).draw()
+    pass
+
+if __name__ == '__main__':
+    main()
