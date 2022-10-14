@@ -98,5 +98,10 @@ class Circuit10:
         if type == 'print':
             print(counts)
         return counts
-        
-Circuit10(4, 5, theta).draw()
+
+def main():
+    Circuit10(4, 5, theta).draw()
+    pass
+
+if __name__ == '__main__':
+    main()

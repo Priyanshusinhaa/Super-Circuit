@@ -99,4 +99,10 @@ class Circuit9:
             print(counts)
         return counts
         
-Circuit9(4, 5, theta).draw()
+
+def main():
+    Circuit9(4, 5, theta).draw()
+    pass
+
+if __name__ == '__main__':
+    main()
