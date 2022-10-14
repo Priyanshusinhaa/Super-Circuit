@@ -116,4 +116,10 @@ class Circuit7:
             print(counts)
         return counts
         
-Circuit7(4, 5, theta).draw()
+
+def main():
+    Circuit7(4, 5, theta).draw()
+    pass
+
+if __name__ == '__main__':
+    main()
