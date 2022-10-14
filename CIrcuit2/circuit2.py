@@ -1,5 +1,4 @@
 from qiskit import *
-import qiskit
 
 theta = [i for i in range(50)]
 
@@ -23,18 +22,24 @@ class Circuit2:
         self.qc.draw('mpl')
     
     def statevector(self):
-        simu_sv = BasicAer.get_backend('statevector_simulator')
-        sv = execute(self.qc, simu_sv).result().get_statevector()
+        simu = BasicAer.get_backend('statevector_simulator')
+        sv = execute(self.qc, simu).result().get_statevector()
         if type == 'print':
             print(sv)
         return sv
     
     def counts(self, type = None):
         simu_sv = BasicAer.get_backend('statevector_simulator')
-        counts = execute(self.qc, simu_sv).result().get_counts()
+        counts = execute(self.qc, simu).result().get_counts()
         if type == 'print':
             print(counts)
         return counts
 
 
-# Circuit2(6, 6, theta).draw()
+def main():
+    Circuit2(6, 6, theta).draw()
+    pass
+
+if __name__ == '__main__':
+    main()
+
