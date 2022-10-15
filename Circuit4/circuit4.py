@@ -22,6 +22,9 @@ class Circuit4:
             self.qc.barrier()
     def draw(self):
         print(self.qc)
+
+    def getCircuit(self):
+        return self.qc
     
     def statevector(self):
         simu_sv = BasicAer.get_backend('statevector_simulator')

@@ -52,6 +52,9 @@ class Circuit5:
 
     def draw(self):
         print(self.qc3)
+
+    def getCircuit(self):
+        return self.qc
     
     def statevector(self):
         simu_sv = BasicAer.get_backend('statevector_simulator')
