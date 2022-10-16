@@ -105,7 +105,7 @@ class Circuit11:
         return counts
 
 def main():
-    Circuit11(4, 5, theta, crxList).draw()
+    Circuit11(4, 3, theta, crxList).draw()
     pass
 
 if __name__ == '__main__':

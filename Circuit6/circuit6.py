@@ -4,7 +4,7 @@ import qiskit
 theta = [i for i in range(100)]
 rcxList = [i for i in range(80)]
 
-class Circuit5:
+class Circuit6:
     def __init__(self, qubits, thetaList, crzList) -> None:
         self.qubits = qubits
         self.thetaList = thetaList
