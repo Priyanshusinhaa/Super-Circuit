@@ -1,6 +1,6 @@
 from qiskit import *
 
-theta = [i for i in range(50)]
+theta = [i for i in range(500)]
 
 class Circuit2:
     def __init__(self, qubits, layers, thetaList) -> None:
@@ -18,8 +18,7 @@ class Circuit2:
                 ent = ent -1
 
     def draw(self):
-        # print(self.qc)
-        self.qc.draw('mpl')
+        print(self.qc)
         
     def getCircuit(self):
         return self.qc
