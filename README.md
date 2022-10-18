@@ -28,5 +28,5 @@
 ###### Here are few circuit from library that you could use for your project:
 
 ###### Circuit 1
+![Circuit1](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit1.png)
 
-![Circuit1](.\Image\circuit1.png)
