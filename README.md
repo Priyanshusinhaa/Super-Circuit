@@ -34,19 +34,19 @@ If you have created the parameterize circuit previously you have come across man
 ###### Super Circuit 1
 ![Circuit1](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit1.png)
 
-Single Layer for Super Circuit 1
+###### Single layer for Super Circuit 1
 ![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit1SingleLayer.png)
 
 ###### Super Circuit 2
 ![Circuit2](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit2.png)
 
-Single Layer for Super Circuit 2
+###### Single layer for Super Circuit 2
 ![Layer2](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit2SingleLayer.png)
 
 ###### Super Circuit 3
 ![Circuit3](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit3.png)
 
-Single Layer for Super Circuit 3
+###### Single layer for Super Circuit 3
 ![Layer3](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit3SingleLayer.png)
 
 
