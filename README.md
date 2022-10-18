@@ -53,7 +53,7 @@ Single Layer for Super Circuit 3
 ###### Super Circuit 4
 ![Circuit4](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit4.png)
 
-Single Layer for Super Circuit 4
+###### Single layer for Super Circuit 4
 ![Layer4](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit4SingleLayer.png)
 
 
