@@ -30,13 +30,13 @@
 
 ##### Here are some Super Circuit from library:
 
-##### Super Circuit 1
+##### 1. Super Circuit 1
 ![Circuit1](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit1.png)
 
 ###### Single layer for Super Circuit 1
 ![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit1SingleLayer.png)
 
-##### Super Circuit 2
+##### 2. Super Circuit 2
 ![Circuit2](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit2.png)
 
 ###### Single layer for Super Circuit 2
