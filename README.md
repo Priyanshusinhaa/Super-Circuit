@@ -1,6 +1,11 @@
 # Super-Circuit
 
-##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value.
+##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value. It is build on python using Qiskit. So, to install qiskit use,
+
+> pip install qiskit
+
+##### Although, I recommand you to install it in virtual environment. It will help you to develop your project independently.
+
 
 ##### Super Circuit can be used in serveral Quantum Algorithm including QML, VQE, QAOA and etc. I'll add encoder and label extracter for QML later
 
