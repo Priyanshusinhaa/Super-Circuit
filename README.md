@@ -8,8 +8,8 @@
 
             Circuit7(qubit, layer, thetaList).draw()
             where,
-                Qubit = number of qubit
-                Layer = number of repetition of circuit along x-axis
+                qubit = number of qubit
+                layer = number of repetition of circuit along x-axis
                 thetaList = List of theta for tunable gates
 
 ###### if project requirement is for 128 qubits you just need to pass like,
@@ -24,3 +24,9 @@
                     > circuit7(128, 1, thetaList).counts()
 
 ###### feel free to add more function as per your need
+
+###### Here are few circuit from library that you could use for your project:
+
+###### Circuit 1
+
+![Circuit1](.\Image\circuit1.png)
