@@ -1,6 +1,6 @@
 # Super-Circuit
 
-##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value. It is build on python using Qiskit. So, to install qiskit use,
+##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It could be tuned by just passing list of thetas in the parameters of circuit to get the desire value. It is built on python using Qiskit. So, to install qiskit use,
 
 > pip install qiskit
 
