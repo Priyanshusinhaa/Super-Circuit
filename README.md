@@ -1,6 +1,6 @@
-# Super-Circuit
+# Super Circuit
 
-##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It could be tuned by just passing list of thetas in the parameters of circuit to get the desire value. It is built on python using Qiskit. So, to install qiskit use,
+##### Super Circuit is a type of parameterize circuit which is independent of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value. It is build on python using Qiskit. So, to install qiskit use,
 
 > pip install qiskit
 
@@ -10,7 +10,7 @@
 ##### Super Circuit can be used in serveral Quantum Algorithm including QML, VQE, QAOA and etc. I'll add encoder and label extracter for QML later
 
 ##### for example
-
+ 
             Circuit7(qubit, layer, thetaList).draw()
             where,
                 qubit = number of qubit
@@ -36,27 +36,71 @@
 ##### Here are some Super Circuit from library:
 
 ##### 1. Super Circuit 1
-+ Circuit1(6, 6, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit1.png)
++ Circuit1(6, 6, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit1.png)
 + Single layer for Circuit1: 
 
-![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit1SingleLayer.png)
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit1SingleLayer.png)
 
 ##### 2. Super Circuit 2
-+ Circuit3(6, 4, thetaList).draw() ![Circuit2](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit2.png)
++ Circuit3(6, 4, thetaList).draw() ![Circuit2](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit2.png)
 + Single layer for Circuit1: 
 
-![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit2SingleLayer.png)
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit2SingleLayer.png)
 
 ##### 3. Super Circuit 3
-+ Circuit3(6, 5, thetaList).draw() ![Circuit3](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit3.png)
++ Circuit3(6, 5, thetaList).draw() ![Circuit3](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit3.png)
 + Single layer for Circuit1: 
 
-![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit3SingleLayer.png)
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit3SingleLayer.png)
 
 ##### 4. Super Circuit 4
-+ Circuit4(6, 5, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/Parameterize-Super-Circuits/blob/master/Images/circuit4.png)
++ Circuit4(6, 5, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit4.png)
 + Single layer for Circuit4: 
 
-![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit4SingleLayer.png)
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit4SingleLayer.png)
+
+
+##### 5. Super Circuit 5
++ Circuit5(6, 5, thetaList).draw() ![Circuit5](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5.png)
++ Single layer for Circuit4: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5SingleLayer.png)
+
+
+##### 6. Super Circuit 6
++ Circuit6(6, 5, thetaList).draw() ![Circuit6](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit6.png)
++ Single layer for Circuit6: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit6SingleLayer.png)
+
+
+##### 7. Super Circuit 7
++ Circuit7(6, 5, thetaList).draw() ![Circuit7](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit7.png)
++ Single layer for Circuit7: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit7SingleLayer.png)
+
+
+##### 8. Super Circuit 8
++ Circuit8(6, 5, thetaList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8.png)
++ Single layer for Circuit4: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8SingleLayer.png)
+
+
+##### 9. Super Circuit 9
++ Circuit9(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9.png)
++ Single layer for Circuit4: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9SingleLayer.png)
+
+
+
+##### 10. Super Circuit 10
++ Circuit10(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10.png)
++ Single layer for Circuit10: 
+
+![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10SingleLayer.png)
+
 
 
