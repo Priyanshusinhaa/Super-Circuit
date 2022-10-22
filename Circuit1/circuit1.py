@@ -1,6 +1,5 @@
 from qiskit import *
-import qiskit
-
+from qiskit.quantum_info import Statevector
 
 theta = [i for i in range(50)]
 class Circuit1:
@@ -32,9 +31,20 @@ class Circuit1:
         if type == 'print':
             print(counts)
         return counts
+    
+    def probabilities(self):
+        simu = BasicAer.get_backend('statevector_simulator')
+        output = execute(self.qc, simu).result().get_statevector()
+        prob = Statevector(output).probabilities()
+        print(prob)
+        return prob
 
 def main():
-    Circuit1(4, 4, theta, measure= True).draw()
+    a = Circuit1(4, 4, theta)
+    print('prob', a.probabilities())
+    print('count', a.counts())
+    print('sv', a.statevector())
+    # print(sum(a))
     pass
 
 if __name__ == '__main__':

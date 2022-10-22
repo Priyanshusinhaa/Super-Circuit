@@ -1,61 +1,109 @@
 from qiskit import *
-import qiskit
 
-theta = [i for i in range(100)]
-rcxList = [i for i in range(80)]
+theta = [i for i in range(32)]
 
-class Circuit6:
-    def __init__(self, qubits, thetaList, crzList) -> None:
+class Circuit8:
+    def __init__(self, qubits, layer, thetaList) -> None:
         self.qubits = qubits
-        self.thetaList = thetaList
-        self.crzList = iter(crzList)
-        self.qc = QuantumCircuit(qubits)
-        self.qc2 = QuantumCircuit(qubits)
-        a = 0
-        for q in range(self.qubits):
-            self.qc.rx(self.thetaList[a], q)
-            self.qc.rz(self.thetaList[a+1], q)
-            self.qc2.rx(self.thetaList[a+2], q)
-            self.qc2.rz(self.thetaList[a+3], q)
-            a += 4
-        self.qc.barrier()
+        self.layer = layer -1
+        self.theta = thetaList
+        
+        nbgates_0_last = self.__countOdd(self.layer + 1)*2
+        nbtheta = (nbgates_0_last*2) + (self.qubits-2)*((self.layer+1)*2)
+        
+        if (len(self.theta) > nbtheta):
+            print('Given theta list is Greater than Required gates')
+        elif (len(self.theta) == nbtheta):
+            pass
+        else:
+            print("Number of Elements in theta list provided isn't equal to Gates required in Ansatz. Please check thetaList")
+            raise
+        
+        if (self.qubits < 4) or (self.qubits%2 != 0):
+            print('Qubit must be greater than 4 and qubit must be even')
+            raise
+        
+        if ((self.layer + 1) <= 2) or ((self.layer+1)%2 != 1):
+            print('Layer should always be greater than 2 and layer must be odd number')
+        
+        if type(self.qubits) != type(int):
+            self.qubits = int(self.qubits)
+        else:
+            print("Please Check You're Entering Right DataType in place of 'Qubits' parameter")
+            raise
 
-        for i in range(4):
-            ent = self.qubits-1
-            if i == 0 :
-                while ent > 0:
-                    self.qc.crz(next(self.crzList), ent, ent-1)
-                    ent = ent -1  
-                self.qc.barrier()
-            if i == 1:
-                while ent > 0:
-                    if ent != self.qubits-1:
-                        self.qc.crz(next(self.crzList), ent, ent-1)
+        self.qc = QuantumCircuit(self.qubits)
+        
+        nbgates_0_last = self.__countOdd(self.layer + 1)*2
+        nbgates_all = (self.layer+1)*2
+        
+        nbgates_at_each_layer = []
+        for i in range(0, self.qubits):
+            if i == 0 or i == self.qubits - 1:
+                nbgates_at_each_layer.append(nbgates_0_last)
+            else:
+                nbgates_at_each_layer.append(nbgates_all)
+        
+        for i in range(0, self.layer + 1):
+            if i%2 == 0: # apply first layer with entanglement
+                j = 0
+                ent = 0
+                while j < self.qubits:
+                    if j == 0:
+                        self.qc.ry(self.theta[i], j)
+                        self.qc.rz(self.theta[i+1], j)
+                    elif j == self.qubits - 1:
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i + 1], j)
+                    else: 
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i *2+ 1], j)   
+                    j += 1
+                if i != self.layer:
+                    while ent < self.qubits:
+                        self.qc.swap(ent, ent+1)
+                        ent += 2
+            else: 
+                j = 0
+                ent = 1
+                while j < self.qubits:
+                    if j == 0:
+                        self.qc.i(j)
+                        self.qc.i(j)            
+                    elif j == self.qubits-1:
+                        self.qc.i(j)
+                        self.qc.i(j)            
                     else:
-                        self.qc.crz(next(self.crzList), ent-1, ent)
-                    ent = ent -1  
-                self.qc.barrier()
-            if i == 2:
-                while ent > 0:
-                    if ent != 1:
-                        self.qc.crz(next(self.crzList), ent-1, ent)
-                    else:
-                        self.qc.crz(next(self.crzList), ent, ent-1)
-                    ent = ent -1  
-                self.qc.barrier()
-            if i == 3:
-                while ent > 0:
-                    self.qc.crz(next(self.crzList), 0, ent)
-                    ent = ent -1  
-                self.qc.barrier()
-        self.qc3 = self.qc + self.qc2
+                        self.qc.ry(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2], j)
+                        self.qc.rz(self.theta[self.__addAllAtIndex(nbgates_at_each_layer, j) + i*2 + 1], j)
+                    j += 1
+                self.qc.i(0)
+                while ent < self.qubits -1:
+                    self.qc.swap(ent, ent+1)
+                    ent += 2
+                self.qc.i(self.qubits-1)
+    def __countOdd(self, num):
+        count = 0
+        for i in range(0, num + 1):
+            if i%2 == 1:
+                count += 1
+            else:
+                pass
+        return count
 
+    def __addAllAtIndex(self, mylist, index):
+        a = mylist
+        num = 0
+        for i in range(0, index):
+            num += a[i]
+        return num
+    
     def draw(self):
-        print(self.qc3)
+        print(self.qc)
 
     def getCircuit(self):
         return self.qc
-    
+
     def statevector(self):
         simu_sv = BasicAer.get_backend('statevector_simulator')
         sv = execute(self.qc, simu_sv).result().get_statevector()
@@ -69,13 +117,10 @@ class Circuit6:
         if type == 'print':
             print(counts)
         return counts
-
+        
 def main():
-    Circuit6(9, theta, theta).draw()
-
+    Circuit8(4, 5, theta).draw()
     pass
 
 if __name__ == '__main__':
     main()
-
-

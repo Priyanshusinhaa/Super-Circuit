@@ -1,23 +1,24 @@
-import qiskit
 from qiskit import *
 
-theta = [i for i in range(788)]
+theta = [i for i in range(100)]
+crxList = theta
 
 class Circuit9:
-    def __init__(self, qubits, layer, thetaList) -> None:
+    def __init__(self, qubits, layer, thetaList, crxList) -> None:
         self.qubits = qubits
         self.layer = layer -1
         self.theta = thetaList
+        self.crxList = iter(crxList)
         
         nbgates_0_last = self.__countOdd(self.layer + 1)*2
         nbtheta = (nbgates_0_last*2) + (self.qubits-2)*((self.layer+1)*2)
         
         if (len(self.theta) > nbtheta):
-            print('Given theta list is Greater than Required gates')
+            print('Given theta list is greater than required gates')
         elif (len(self.theta) == nbtheta):
             pass
         else:
-            print("Number of Elements in theta list provided isn't equal to Gates required in Ansatz. Please check thetaList")
+            print("Number of elements in theta list provided isn't equal to gates required in Ansatz. Please check thetaList")
             raise
         
         if (self.qubits < 4) or (self.qubits%2 != 0):
@@ -30,7 +31,7 @@ class Circuit9:
         if type(self.qubits) != type(int):
             self.qubits = int(self.qubits)
         else:
-            print("Please Check You're Entering Right DataType in place of 'Qubits' parameter")
+            print("Please check You're entering right dataType in place of 'Qubits' parameter")
             raise
 
         self.qc = QuantumCircuit(self.qubits)
@@ -52,7 +53,7 @@ class Circuit9:
                     j += 1
                 if i != self.layer:
                     while ent < self.qubits:
-                        self.qc.swap(ent, ent+1)
+                        self.qc.crx(next(self.crxList), ent+1, ent)
                         ent += 2
             else: 
                 j = 0
@@ -63,7 +64,7 @@ class Circuit9:
                     j += 1
                 self.qc.i(0)
                 while ent < self.qubits -1:
-                    self.qc.swap(ent, ent+1)
+                    self.qc.crx(next(self.crxList), ent+1, ent)
                     ent += 2
                 self.qc.i(self.qubits-1)
     def __countOdd(self, num):
@@ -101,10 +102,9 @@ class Circuit9:
         if type == 'print':
             print(counts)
         return counts
-        
 
 def main():
-    Circuit9(4, 5, theta).draw()
+    Circuit9(4, 3, theta, crxList).draw()
     pass
 
 if __name__ == '__main__':
