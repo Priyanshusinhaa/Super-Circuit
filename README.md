@@ -43,13 +43,13 @@
 
 ##### 2. Super Circuit 2
 + Circuit3(6, 4, thetaList).draw() ![Circuit2](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit2.png)
-+ Single layer for Circuit1: 
++ Single layer for Circuit2: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit2SingleLayer.png)
 
 ##### 3. Super Circuit 3
 + Circuit3(6, 5, thetaList).draw() ![Circuit3](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit3.png)
-+ Single layer for Circuit1: 
++ Single layer for Circuit3: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit3SingleLayer.png)
 
@@ -62,7 +62,7 @@
 
 ##### 5. Super Circuit 5
 + Circuit5(6, 5, thetaList).draw() ![Circuit5](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5.png)
-+ Single layer for Circuit4: 
++ Single layer for Circuit5: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5SingleLayer.png)
 
@@ -83,14 +83,14 @@
 
 ##### 8. Super Circuit 8
 + Circuit8(6, 5, thetaList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8.png)
-+ Single layer for Circuit4: 
++ Single layer for Circuit8: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8SingleLayer.png)
 
 
 ##### 9. Super Circuit 9
 + Circuit9(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9.png)
-+ Single layer for Circuit4: 
++ Single layer for Circuit9: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9SingleLayer.png)
 
