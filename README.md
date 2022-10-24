@@ -62,43 +62,42 @@
 
 ##### 5. Super Circuit 5
 + Circuit5(6, 5, thetaList).draw() ![Circuit5](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (CX, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CX, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit5SingleLayer.png)
 
 
 ##### 6. Super Circuit 6
 + Circuit6(6, 5, thetaList).draw() ![Circuit6](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit6.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (SWAP, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (SWAP, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit6SingleLayer.png)
 
 
 ##### 7. Super Circuit 7
 + Circuit7(6, 5, thetaList).draw() ![Circuit7](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit7.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (SWAP, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (SWAP, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit7SingleLayer.png)
 
 
 ##### 8. Super Circuit 8
 + Circuit8(6, 5, thetaList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (CX, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CX, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit8SingleLayer.png)
 
 
 ##### 9. Super Circuit 9
 + Circuit9(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (CRX, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CRX, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9SingleLayer.png)
 
 
-
 ##### 10. Super Circuit 10
 + Circuit10(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10.png)
-+ There are three layer in the below image. First layer is (RY, RZ), second and third one are (CRZ, RY, RZ)
++ There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CRZ, RY, RZ)
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10SingleLayer.png)
 
