@@ -91,6 +91,7 @@
 ##### 9. Super Circuit 9
 + Circuit9(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9.png)
 + There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CRX, RY, RZ)
++ It takes one additional parameter that's a list of CRX. It is denoted as crxList in the code.
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit9SingleLayer.png)
 
@@ -98,6 +99,7 @@
 ##### 10. Super Circuit 10
 + Circuit10(6, 5, thetaList, crzList).draw() ![Circuit8](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10.png)
 + There are three layer in the below image. First layer is (RY, RZ), second and third layer are (CRZ, RY, RZ)
++ It takes one additional parameter that's a list of CRZ. It is denoted as crzList in the code.
 
 ![Layer1](https://github.com/Priyanshusinhaa/SuperCircuit/blob/master/Images/circuit10SingleLayer.png)
 
