@@ -9,9 +9,10 @@
 
 ##### Super Circuit can be used in serveral Quantum Algorithm including QML, VQE, QAOA and etc. I'll add encoder and label extracter for QML later
 
-##### for example
- 
-            Circuit7(qubit, layer, thetaList).draw()
+##### for example you could call the class by following code:
+            
+            > Circuit7(qubit, layer, thetaList).draw()
+            
             where,
                 qubit = number of qubit
                 layer = number of repetition of circuit along x-axis
