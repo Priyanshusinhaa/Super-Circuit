@@ -41,8 +41,6 @@
 
 ### Images of Super Circuit
 
-#### Here are some Super Circuit from library:
-
 #### 1. Super Circuit 1
 + Circuit1(6, 6, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit1.png)
 + Single layer for Circuit1: 
