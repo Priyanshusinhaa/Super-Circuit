@@ -8,7 +8,7 @@
 
 2. Choose a circuit from the library (Images are attached below). Suppose, you choose Circuit 3
 3. Go to the repo of Circuit3 and download circuit3.py
-4. call the class methods by below commands
+4. Call the class function by below commands
 
 ##### Although, I recommand you to install it in virtual environment. It will help you to develop your project independently. Below are examples of how to use it. 
 
