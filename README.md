@@ -6,9 +6,9 @@
 
              pip install qiskit
 
-2. Choose a circuit from the library (Images are attached below). Suppose, you choose Circuit 3
-3. Go to the repo of Circuit3 and download circuit3.py
-4. Call the class function by below commands
+2. Now, we've to choose a circuit from the library (Images are mentioned below). Suppose, we choose Circuit 3
+3. then, We've to go to the repo of Circuit3 and download circuit3.py
+4. Use the class methods to call circuit as per your need.
 
  Although, I recommend you to install it in a virtual environment. It will help you to develop your project independently. Below are examples of how to use it. 
  
