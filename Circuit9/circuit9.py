@@ -1,8 +1,5 @@
 from qiskit import *
 
-theta = [i for i in range(100)]
-crxList = theta
-
 class Circuit9:
     def __init__(self, qubits, layer, thetaList, crxList) -> None:
         self.qubits = qubits
@@ -104,6 +101,9 @@ class Circuit9:
         return counts
 
 def main():
+    theta = [i for i in range(100)]
+    crxList = theta
+
     Circuit9(4, 3, theta, crxList).draw()
     pass
 
