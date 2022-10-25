@@ -1,8 +1,5 @@
 from qiskit import *
 
-theta = [i for i in range(50)]
-rcxList = [i for i in range(20)]
-
 class Circuit3:
     def __init__(self, qubits, layers, thetaList, rcxList) -> None:
         self.qubits = qubits
@@ -39,7 +36,11 @@ class Circuit3:
         return counts
 
 def main():
+    theta = [i for i in range(50)]
+    rcxList = [i for i in range(20)]
+    
     Circuit3(4,3, theta, rcxList).draw()
+    
     pass
 
 if __name__ == '__main__':
