@@ -15,7 +15,7 @@
                 layer = number of repetition of circuit along x-axis
                 thetaList = List of theta for tunable gates
 
-##### For creating a circuit for 128 qubits.
+##### For creating a circuit for 128 qubits,
 
                 to "draw" in terminal use .draw(),
                     > Circuit7(128, 1, thetaList).draw()
