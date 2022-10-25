@@ -1,4 +1,4 @@
-# Super Circuit
+![supercircuit](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/supercircuit.png)
 
 #### Super Circuit is a type of parameterize circuit which is independent of fixed number of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value. In simple, you can create a circuit for any number of qubits just passing a 'number of qubit', 'number of layer' and 'list of theta'. Every circuit is built independently it means you can just take class of circuit from here and use it in your project or thesis. It can be used in any Quantum Algorithm that requires to find solution for particular problem. It is built on python using Qiskit. So, to use the circuit use the following steps below,
 
