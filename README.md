@@ -1,18 +1,18 @@
-![supercircuit](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/supercircuit.png)
+![supercircuit](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/supercircuit.svg)
 
-#### Super Circuit is a type of parameterize circuit which is independent of fixed number of qubits, layers or both. It is used to tune the parameters of circuit to get the desire value. In simple, you can create a circuit for any number of qubits just passing a 'number of qubit', 'number of layer' and 'list of theta'. Every circuit is built independently it means you can just take class of circuit from here and use it in your project or thesis. It can be used in any Quantum Algorithm that requires to find solution for particular problem. It is built on python using Qiskit. So, to use the circuit use the following steps below,
+ Super Circuit is a type of parameterized circuit which is independent of a fixed number of qubits, layers or both. It is used to tune the parameters of the circuit to get the desired value. In simple terms, you can construct a circuit for any number of qubits by just passing a 'number of qubit', 'number of layer' and 'list of theta' as parameters in class. Every circuit is built independently; it means you can just take a class of circuit from here and use it in your project or thesis. It could be used as a core component of several Quantum Algorithms that require finding solutions for particular problems. It is built on python using Qiskit. We can use the circuit steps mentioned below,
+ 
+1. We've to install Qiskit first. So to install use these one:
 
-1. Install Qiskit by the below command.
-
-            > pip install qiskit
+             pip install qiskit
 
 2. Choose a circuit from the library (Images are attached below). Suppose, you choose Circuit 3
 3. Go to the repo of Circuit3 and download circuit3.py
 4. Call the class function by below commands
 
-#### Although, I recommand you to install it in virtual environment. It will help you to develop your project independently. Below are examples of how to use it. 
-
-#### for example you could call the class by following code:
+ Although, I recommend you to install it in a virtual environment. It will help you to develop your project independently. Below are examples of how to use it. 
+ 
+ for example you could call the class by following code:
             
             > Circuit7(qubit, layer, thetaList).draw()
             
@@ -21,7 +21,7 @@
                 layer = number of repetition of circuit along x-axis
                 thetaList = List of theta for tunable gates
 
-#### For creating a circuit for 128 qubits,
+ For creating a circuit for 128 qubits,
 
                 to "draw" in terminal use .draw(),
                     > Circuit7(128, 1, thetaList).draw()
@@ -35,7 +35,7 @@
                 to get "counts" use .counts(), 
                     > Circuit7(128, 1, thetaList).counts()
 
-#### feel free to add more function as per your need
+ feel free to add more function as per your need
 
 #### Here are some Super Circuit from library:
 
