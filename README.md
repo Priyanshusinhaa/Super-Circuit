@@ -85,7 +85,7 @@ ________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________________________________________
 
 #### 4. Super Circuit 4
-+ Circuit4(6, 5, thetaList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit4.png)
++ Circuit4(6, 5, thetaList, crxList).draw() ![Circuit1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit4.png)
 + Single layer for Circuit4: 
 
 ![Layer1](https://github.com/Priyanshusinhaa/Super-Circuit/blob/master/Images/circuit4SingleLayer.png)
