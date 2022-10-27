@@ -41,7 +41,6 @@ def main():
     rcxList = [i for i in range(20)]
     
     Circuit3(4,3, theta, rcxList).draw()
-    
     pass
 
 if __name__ == '__main__':
