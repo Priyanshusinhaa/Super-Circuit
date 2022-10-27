@@ -15,6 +15,7 @@ class Circuit3:
             while ent > 0:
                 self.qc.crz(next(self.rcxList), ent, ent-1)
                 ent = ent -1
+                
     def draw(self):
         print(self.qc)
 
