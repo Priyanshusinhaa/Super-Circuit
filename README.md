@@ -6,24 +6,24 @@ ________________________________________________________________________________
 ### Introduction
 _______________________________________________________________________________________________________________________________________________________________________
 
-Super Circuit is a type of parameterized circuit which is independent of a fixed number of qubits, layers or both. It could be used to get the desired Wavefunction for any size of data. It could be extended upto 'n' number of qubits, and 'm' number of layers. In simple terms, you can construct a circuit for any number of qubits by just passing a 'number of qubit', 'number of layer' and 'list of theta' as parameters in class. Every circuit is built independently; it means you can just take a class of circuit from here and use it in your project or software. It could be used as a core component of several Quantum Algorithms like Quantum Machine learning, VQE, QAOA, etc. It is built on python using Qiskit. We can use the circuit as a steps mentioned below,
+The Super Circuit is a versatile parameterized circuit that can be applied to any size of data without being restricted to a fixed number of qubits, layers, or both. By passing a 'number of qubit', 'number of layer', and 'list of theta' as parameters, you can construct a circuit for any number of qubits. Each circuit is built independently, making it a convenient core component for Quantum Algorithms such as Quantum Machine Learning, VQE, QAOA, etc. Built on Python using Qiskit, you can simply take a class of circuit and use it in your project or software. To use the Super Circuit, follow the steps outlined below.
 
 _______________________________________________________________________________________________________________________________________________________________________
 
 ### Uses
 _______________________________________________________________________________________________________________________________________________________________________
 
-1. We've to install Qiskit first. So to install use these one:
+1. Install Qiskit by running the command "pip install qiskit" in your terminal or command prompt.
 
-             pip install qiskit
+2. Choose a circuit from the Qiskit library. For example, you may select Circuit 3.
 
-2. Now, we've to choose a circuit from the library (Images are mentioned below). Suppose, we choose Circuit 3
-3. then, We've to go to the repo of Circuit3 and have to download circuit3.py
-4. Now, we can yse the class methods to call circuit as per our need.
+3. Go to the repository for Circuit 3 and download circuit3.py.
 
- Although, I recommend you to install it in a virtual environment. It will help you to develop your project independently. Below are examples of how to use it. 
+4. Use the class methods to call the circuit as needed for your project or software.
 
-_______________________________________________________________________________________________________________________________________________________________________
+Note: It is recommended to install Qiskit in a virtual environment to develop your project independently. To use Qiskit in your project or software, refer to the provided examples and documentation to understand how to call and use the various functions and methods.
+
+______________________________________________________________________________________________________________________________________________________
 
 ### Examples
 _______________________________________________________________________________________________________________________________________________________________________
